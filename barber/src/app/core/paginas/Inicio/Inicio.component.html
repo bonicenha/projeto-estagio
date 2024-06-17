@@ -1,0 +1,292 @@
+<div class="grid-container">
+  <!-- Inicio Header -->
+  <div class="grid-header">
+    <header class="header" id="header">
+      <div class="logo" id="logo">
+        <a href="">
+          <img
+            id="logotipo"
+            src="assets/logo.png"
+            height="100px"
+            draggable="false"
+        /></a>
+      </div>
+      <nav>
+        <ul draggable="false">
+          <li><a class="goto" (click)="scrollLoc($event)">Início</a></li>
+          <li><a class="goto" (click)="scrollLoc($event)">Sobre</a></li>
+          <li><a class="goto" (click)="scrollLoc($event)">Serviços</a></li>
+          <li><a class="goto" (click)="scrollLoc($event)">Localização</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <!-- Fim Header -->
+
+  <div class="grid-main" id="inicio">
+    <!-- INICIO SOBRE -->
+    <section id="banner" class="parallax">
+      <div class="titulo-banner">
+        <h2 class="allura banner1 no-select">Davi Simões</h2>
+        <h2 class="teko banner2 no-select">Barbearia</h2>
+      </div>
+      <div class="banner-foot pb-5">
+        <h3 class="allura no-select banner-foot-text">Vem ficar na régua!!!</h3>
+      </div>
+    </section>
+
+    <section id="sobre-davi">
+      <div class="legenda-davi">
+        <h2 class="legenda-davi-title">O Davi</h2>
+        <p class="legenda-davi-text">
+          Sou Davi Simões e estou há 10 anos dedicando meu talento e paixão para
+          transformar cortes de cabelo em verdadeiras obras de arte. Adoro o que
+          faço e sempre trago um sorriso no rosto, pronto para bater um bom papo
+          enquanto deixo você com um visual incrível. Minha prioridade é que
+          você se sinta confiante e satisfeito. Venha me conhecer e experimente
+          a diferença que um corte personalizado pode fazer no seu estilo e no
+          seu dia.
+        </p>
+      </div>
+
+      <div class="foto-davi" draggable="false"></div>
+    </section>
+
+    <!-- FIM SOBRE -->
+
+    <!-- INICIO SERVIÇOS -->
+    <section id="servicos">
+      <hr class="border-branca" />
+      <h1 class="text-white text-center py-5 m-4 aclonica">
+        CONHEÇA NOSSOS SERVIÇOS
+      </h1>
+      <section class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 d-flex flex-column align-items-center mb-4">
+            <div
+              class="card bg-transparent border-white text-white w-100"
+              style="min-height: 300px"
+            >
+              <div
+                class="card-body d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  src="https://seumariobarbearia.com.br/wp-content/uploads/2022/04/homem-com-barba-1.png"
+                  class="img-fluid mb-2"
+                  alt="Barba"
+                  draggable="false"
+                />
+                <h2 class="card-title">Barba</h2>
+                <h2 class="card-subtitle">R$ 20</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex flex-column align-items-center mb-4">
+            <div
+              class="card bg-transparent border-white text-white w-100"
+              style="min-height: 300px"
+            >
+              <div
+                class="card-body d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  src="https://seumariobarbearia.com.br/wp-content/uploads/2022/04/man-hair.png"
+                  class="img-fluid mb-2"
+                  alt="Cabelo"
+                  draggable="false"
+                />
+                <h2 class="card-title">Cabelo</h2>
+                <h2 class="card-subtitle">R$ 20</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex flex-column align-items-center mb-4">
+            <div
+              class="card bg-transparent border-white text-white w-100"
+              style="min-height: 300px"
+            >
+              <div
+                class="card-body d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  src="https://seumariobarbearia.com.br/wp-content/uploads/2022/04/male-head-hair-and-beard.png"
+                  class="img-fluid mb-2 no-select"
+                  alt="Cabelo e Barba"
+                  draggable="false"
+                />
+                <h2 class="card-title">Cabelo e Barba</h2>
+                <h2 class="card-subtitle">R$ 40</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="row p-3">
+              <div class="col-12 table-servicos">
+                <table class="mb-6" style="width: 400px;">
+                  <tbody>
+                    <ng-container *ngFor="let item of response?.Registros; let i = index">
+                      <tr>
+                        <th scope="row" class="text-center text-white align-middle servicos-nome">{{ item.Nome }}</th>
+                        <td class="text-center text-white align-middle servicos-valor">R${{ item.Valor }}</td>
+                        </tr>
+                      </ng-container>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- FIM SERVIÇOS -->
+
+    <!-- INICIO GALERIA -->
+    <hr class="border-branca" />
+    <section id="gallery">
+      <!-- Images used to open the lightbox -->
+      <div class="gallery-photo">
+        <img
+          src="assets/gallery/1.jpg"
+          draggable="false"
+          height="350px"
+          class="hover-shadow"
+        />
+      </div>
+      <div class="gallery-photo">
+        <img
+          src="assets/gallery/2.jpg"
+          draggable="false"
+          height="350px"
+          class="hover-shadow"
+        />
+      </div>
+      <div class="gallery-photo">
+        <img
+          src="assets/gallery/3.jpg"
+          draggable="false"
+          height="350px"
+          class="hover-shadow"
+        />
+      </div>
+      <div class="gallery-photo">
+        <img
+          src="assets/gallery/4.jpg"
+          draggable="false"
+          height="350px"
+          class="hover-shadow"
+        />
+      </div>
+         </section>
+    <!-- FIM GALERIA -->
+    <hr class="border-branca" />
+    <section id="localizacao" class="py-5">
+      <h1 class="text-white text-center aclonica py-4">VISITE A BARBEARIA</h1>
+      <div class="d-flex justify-content-center pb-3">
+        <div class="d-flex align-items-center pr-5">
+          <h5 class="text-white pr-1 mb-0">Horário de Funcionamento:</h5>
+          <p class="text-white mb-0">Terça a Sábado – 08:30 às 19:00</p>
+        </div>
+        <div class="d-flex align-items-center pr-5">
+          <h5 class="text-white pr-1 mb-0">Telefone:</h5>
+          <p class="text-white mb-0">(28) 9 9976-7353</p>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center pb-3">
+        <h5 class="text-white pr-1 mb-0">Endereço:</h5>
+        <p class="text-white mb-0">
+          Avenida Rauta, 750, Justiça 2, Anchieta - ES, 29230-000, Brasil.
+        </p>
+      </div>
+
+      <!-- Embed do mapa -->
+      <div class="d-flex justify-content-center">
+        <div
+          style="
+            max-width: 100%;
+            list-style: none;
+            transition: none;
+            overflow: hidden;
+            width: 1140px;
+            height: 350px;
+          "
+        >
+          <div
+            id="canvas-for-googlemap"
+            style="height: 100%; width: 100%; max-width: 100%"
+          >
+          <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Av.+Atílio+Rauta,+750+-+Portal+de+Anchieta,+Anchieta+-+ES,+29230-000,+Brasil&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+
+          </div>
+          <a
+            class="embed-ded-maphtml"
+            rel="nofollow"
+            href="https://www.bootstrapskins.com/themes"
+            id="authmaps-data"
+            >premium bootstrap themes</a
+          ><style>
+            #canvas-for-googlemap img {
+              max-width: none !important;
+              background: none !important;
+              font-size: inherit;
+              font-weight: inherit;
+            }
+          </style>
+        </div>
+      </div>
+      <!-- Embed do mapa -->
+    </section>
+  </div>
+  <div class="grid-footer">
+    <footer class="footer">
+      <ul class="footer-icons-container">
+        <li>
+          <a
+            class="footer-icons-div no-select"
+            draggable="false"
+            href="https://www.instagram.com/davi_simoes_barbearia/"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              class="footer-icons"
+              src="assets/instagram.png"
+              draggable="false"
+            /><span class="footer-caption">Instagram</span></a
+          >
+        </li>
+        <li>
+          <a
+            class="footer-icons-div no-select"
+            draggable="false"
+            href="https://api.whatsapp.com/send/?phone=5528999767353&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              class="footer-icons"
+              src="assets/whatsapp-branco.png"
+              draggable="false"
+            /><span class="footer-caption">WhatsApp</span></a
+          >
+        </li>
+      </ul>
+      <p class="copyright">
+        &copy;2024 Davi Simões Barbearia | Todos os direitos reservados.
+      </p>
+    </footer>
+  </div>
+
+  <div class="whatsapp-button">
+    <div class="whatsapp-tooltip">
+      <p class="tooltip-text no-select">Atendimento On-line</p>
+      <a
+        draggable="false"
+        href="https://api.whatsapp.com/send/?phone=5528999767353&text&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <button class="whatsapp"></button>
+      </a>
+    </div>
+  </div>
+</div>

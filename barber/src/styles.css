@@ -1,0 +1,530 @@
+@import "css/normalize.css";
+@import "css/style.css";
+
+:root {
+    --primaria: #3d3690;
+    --secundaria: #0e32c2;
+    --cor1: #0B0C0D;
+    --cor2: #454648;
+    --cor3: #828384;
+    --cor4: #b8b8b8;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1399px;
+  }
+
+  html, body { 
+    scroll-behavior: smooth
+  }
+  
+
+  .grid-main{
+    background-color: black;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-areas: 
+    "grid-header"
+    "grid-main"
+    "grid-footer";
+    grid-template-rows: 0fr 1fr 0fr;
+    min-height: 100vh;
+  }
+
+  .grid-header{
+    grid-area: grid-header;
+  }
+
+  .grid-main{
+    grid-area: grid-main;
+  }
+
+  .grid-footer{
+    grid-area: grid-footer;
+  }
+
+  .footer{
+    width: 100%;
+    height: 80px;
+    background-color: var(--cor1);
+  }
+
+  .header{
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo{
+    position: absolute;
+    left: 2.5rem;
+    padding-top: 0.2rem;
+  }
+
+  #logotipo:hover{
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -o-transform: scale(1.15);
+    transform: scale(1.15);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+  }
+  
+  
+  .header ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+  }
+
+  .header li{
+    padding-right: 2rem;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    font-family: Teko;
+    font-size: 2rem;
+  }
+  
+  .header a{
+    line-height: 95px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .header nav{
+    height: 95px;
+  }
+
+
+  .header li:hover{
+    transition: 0.25s;
+    color: rgb(160, 160, 160);
+    font-size: 2.3rem;
+  }
+
+  #banner{
+    height: 570px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .parallax{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("assets/bg.png");
+  }
+
+  #servicos{
+    background-color: black;
+    height: 750px;
+  }
+
+  #localizacao{
+    background-color: black;
+  }
+
+  .whatsapp-button{
+    z-index: 10;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+
+  }
+
+  .whatsapp{
+    cursor: pointer;
+    background-image: url(assets/whatsapp.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    border: none;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+    transition: 0.7s;
+    background-color: rgb(240, 240, 240);
+    animation: pulse 2s infinite;
+    visibility: visible;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .whatsapp:hover{
+    transition: 0.7s;
+    background-color: #25D366;
+  }
+
+  .zapzap:focus{
+    outline: none;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    background: rgb(38, 38, 38);
+    min-height: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footer p {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .whatsapp-tooltip {
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .whatsapp-tooltip:hover{
+    visibility: visible;
+    z-index: 1;
+  }
+
+  .tooltip-text{
+    font-family: poppins;
+    margin-right: 15px;
+    margin-top: 13px;
+    color: black;
+    background-color: white;
+    height: 26px;
+    width: 180px;
+    border-radius: 9px;
+    padding-left: 4px;
+  }
+
+  .tooltip-text::after{
+  content: "";
+  position: absolute;
+  margin-top: 6px;
+  margin-left: 7px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+  }
+
+  .footer li{
+    list-style: none;
+  }
+
+ .aclonica{
+  font-family: Aclonica;
+ }
+
+ .border-branca{
+  margin: 0;
+  border: 2px white solid;
+ }
+
+ .border-branca2{
+  margin: 0;
+  border: 1px white solid;
+ }
+
+ .no-select{
+  user-select: none;
+ }
+
+ .footer-caption{
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-family: teko;
+ }
+
+ .footer-icons-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+ .footer-icons-div{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  color: white;
+ }
+
+ .footer-icons{
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  justify-content: center;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.footer-icons-div:hover{
+  color: var(--cor4);
+  text-decoration: none;
+ }
+
+ /* INICIO GALERIA */
+
+ #gallery{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  background-image: url(assets/gallery/fundo.png);
+  background-attachment: fixed;
+  background-repeat: repeat;
+  animation: moveIt 11s linear infinite;
+ }
+
+ @keyframes moveIt {
+  from {background-position: top left;}
+  to {background-position: bottom right;}
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+img.hover-shadow:hover{
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  transform: scale(1.15);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ /* FIM GALERIA */
+
+.allura{
+  font-family: allura;
+}
+
+.teko{
+  font-family: teko;
+}
+
+.banner1{
+  justify-self: center;
+  text-shadow: 2px 2px 10px black;
+  z-index: 2;
+  color: rgb(182, 182, 182);
+  font-weight: bold;
+  font-size: 6.2rem;
+  position: absolute;
+  padding-right: 200px;
+}
+
+.banner2{
+  text-shadow: 5px 5px #000000;
+  z-index: 1;
+  position: absolute;
+  padding-top: 59px;
+  padding-left: 290px;
+  color: white;
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.titulo-banner{
+  padding-bottom: 200px;
+  padding-right: 130px;
+  align-self: center;
+}
+
+.banner-foot-text{
+  text-shadow: 3px 3px 5px #000000;
+  font-weight: bold;
+  color: #ffbf00;
+  font-size: 3.5rem;
+  animation: pulse 2s infinite;
+}
+
+.banner-foot{
+  padding-right: 10rem;
+  align-self: end;
+}
+
+
+.o-davi{
+  display: flex;
+}
+
+.foto-davi{
+  block-size: auto;
+  height: 460px;
+  width: 320px;
+  background-image: url(assets/photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: solid  black 1px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px black;
+  
+}
+
+#sobre-davi{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  height: 550px;
+}
+
+.legenda-davi{
+  width: 40%;
+}
+
+.legenda-davi-title{
+  font-family: Teko;
+  color: var(--cor2);
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.legenda-davi-text{
+  color: black;
+  font-size:1.2rem ;
+}
+
+
+/* LOGIN */
+
+#effect-sides{
+  display: flex;
+}
+
+#login-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-logo{
+  padding-right: 40vw;
+  padding-top: 3rem;
+}
+
+.login-form{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 30%;
+}
+
+#botao-login{
+  display: flex;
+  justify-content: center;
+}
+
+#botao-login button{
+  border: none;
+  border-radius: 5px;
+  font-family: teko;
+  font-size: 1.4rem;
+}
+
+.input-login{
+  padding: 5px;
+  margin: 5px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  font-family: teko;
+  font-size: 1.3rem;
+}
+
+.input-login:focus{
+
+  outline: none;
+}
+
+.effect-sides{
+  display: flex;
+}
+
+.login-left{
+  position: absolute;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-image: url(assets/gallery/fundo.png);
+  background-color: white;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  animation: moveIt2 10s linear infinite;
+}
+
+.login-right{
+  position: absolute;
+  right: 0;
+  width: 80px;
+  height: 100vh;
+  background-image: url(assets/gallery/fundo.png);
+  background-color: white;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  animation: moveIt2 10s linear infinite;
+}
+
+@keyframes moveIt2 {
+  from {background-position: top ;}
+  to {background-position: bottom ;}
+}
+/* FIM LOGIN */
+
+.card-servicos{
+  width: 70%;
+  padding: 1.5rem;
+  border: solid white 1px;
+  border-radius: 5px;
+}
+
+.table-servicos{
+  border-radius: 10px;
+  border: 1px white solid;
+  padding: 1rem ;
+}
+
+.servicos-nome{
+  border-bottom: 1px white ridge;
+}
+
+.servicos-valor{
+  border-bottom: 1px white ridge;
+  border-left: 1px white dotted;
+}
